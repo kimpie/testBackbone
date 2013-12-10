@@ -19,10 +19,7 @@ jQuery(document).ready(function () {
 		jQuery('#display_name').append(name);
 	};
 
-	var create_game = function (game) {
-		window.game = new gameModel;
-		jQuery(window.open('inGame/:game'));//open the new game in a new window 
-	};
+	socket = io.connect('http://localhost:8080/');
 
 
 	socket.on('users', function (data){
@@ -39,10 +36,6 @@ jQuery(document).ready(function () {
 
 	socket.on('chat', function (data) {
 		log_chat_message(data.message, 'normal');
-	});
-
-	socket.on('room', function (data){
-		create_game(data.newgame);
 	});
 
 });
