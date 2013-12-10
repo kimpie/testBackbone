@@ -7,7 +7,10 @@
 		"title": "Game with ",
 		"Opponent": "Christopher",
 		"module": "chatter",
-		"rotator": "Your turn"
+		"rotator": "Your turn",
+		"room": "1",
+		"players": " ",
+		"pid": " "
 	},
 	{
 		"id": "Grace",
@@ -17,7 +20,10 @@
 		"title": "Game with ",
 		"Opponent": "Bill",
 		"module": "chatter",
-		"rotator": "Bill's Turn"
+		"rotator": "Bill's Turn",
+		"room": "1",
+		"players": " ",
+		"pid": " "
 	},
 	{
 		"id": "Samantha",
@@ -27,7 +33,10 @@
 		"title": "Game with ",
 		"Opponent": "George",
 		"module": "chatter",
-		"rotator": "Your Turn"
+		"rotator": "Your Turn",
+		"room": "1",
+		"players": " ",
+		"pid": " "
 	},
 	{
 		"id": "Ashley",
@@ -37,7 +46,10 @@
 		"title": "Game with ",
 		"Opponent": "Ivy",
 		"module": "chatter",
-		"status": "Your Turn"
+		"status": "Your Turn",
+		"room": "1",
+		"players": " ",
+		"pid": " "
 	},
 	{
 		"id": "Sussie",
@@ -47,7 +59,10 @@
 		"title": "Game with ",
 		"Opponent": "Jeff",
 		"module": "chatter",
-		"status": "Jeff's Turn"
+		"status": "Jeff's Turn",
+		"room": "1",
+		"players": " ",
+		"pid": " "
 	},
 	{
 		"id": "Barbie",
@@ -57,6 +72,9 @@
 		"title": "Game with ",
 		"Opponent": "Ken",
 		"module": "chatter",
-		"status": "Ken's Turn"
+		"status": "Ken's Turn",
+		"room": "1",
+		"players": " ",
+		"pid": " "
 	}
 ]

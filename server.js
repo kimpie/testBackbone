@@ -10,20 +10,20 @@ var http = require('http'),
         io = require('socket.io').listen(server);
 
 app.configure(function(){
-        //app.set('port', 8080);
+        app.set('port', 8080);
         //app.set('views', __dirname + '/views');
         //app.set('view engine', 'jade');
 //        app.locals.pretty = true;
 //        app.use(express.favicon());
 //        app.use(express.logger('dev'));
         app.use(express.bodyParser());
-//        app.use(express.cookieParser());
-//        app.use(express.session({ 
-//                key: 'express.sid', 
-//                secret: 'secret',
-//                })
-//        );
-//        app.use(express.methodOverride());
+        app.use(express.cookieParser());
+        app.use(express.session({ 
+                key: 'express.sid', 
+                secret: 'secret',
+                })
+        );
+        app.use(express.methodOverride());
         //app.use(require('stylus').middleware({ src: __dirname + '/public' }));
         app.use(express.static('public'));
 });
@@ -64,16 +64,28 @@ app.get('/inGame/:game_name', function  (req, res) {
 
 });
 
-var chat_room = io;
+io.sockets.on('connection', function (socket) {
+  socket.on('join', function (data){
+    socket.emit('join', {status: data.status});
 
-chatter.set_sockets(chat_room.sockets);
+    socket.join('room', function (data){
+      socket.broadcast.to('room').emit('joined', {message: socket.id + ' is in the room.'});
+    });//end of 'room'
+  });//end of join
+}); //end of 'connection'
 
-chat_room.sockets.on('connection', function (socket) {
-        chatter.connect_chatter({
-                socket: socket,
-                username: socket.id
-        });
-});
+  var chat_room = io;
+
+  chatter.set_sockets(chat_room.sockets);
+
+  chat_room.sockets.on('connection', function (socket) {
+          chatter.connect_chatter({
+                  socket: socket,
+                  username: socket.id
+          });
+  });
+
+
 
 app.delete('/inGame/:game_name', function  (req, res) {
 
