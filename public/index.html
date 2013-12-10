@@ -4,6 +4,8 @@
 
 	<script src="/socket.io/socket.io.js"></script>
 	<script type="text/javascript" src="js/lib/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="js/lib/fbscript.js"></script>
+	<script type="text/javascript" src="js/lib/joinscript.js"></script>
 	<script type="text/javascript" src="js/lib/chatterscript.js"></script>
 	<script type="text/javascript" src="js/lib/underscore.min.js"></script>
 	<script type="text/javascript" src="js/lib/backbone-min.js"></script>
@@ -33,8 +35,17 @@
 		</ul>
 	</div>
 
+	<div id="fb_root">
+	</div>
+	<div class="loggedoff">
+		<h3>Please login to get started</h3>
+		<fb:login-button show-faces="true" width="200" max-rows="1"></fb:login-button>
+
+	</div>
+	<div class="loggedin">
 	<div class="container" id="app">
 
+	</div>
 	</div>
 
 </body>
