@@ -8,6 +8,14 @@
 
 }
 
+div#not_joined {
+	display: block;
+}
+
+div#joined {
+	display: none;
+}
+
 .loggedoff {
 	display: block;
 }
