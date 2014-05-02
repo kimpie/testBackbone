@@ -25,27 +25,45 @@
 </head>
 <body>
 
-	<div class="container">
-		<h1>Testing App with Backbone</h1>
-
-		<ul class="nav nav-pills">
-			<li><a href="#">Games</a></li>
-			<li><a href="#/inGame/new">New Game</a></li>
-			<li><a href="#/inGame/sussie">sussie</a></li>
-		</ul>
-	</div>
-
-	<div id="fb_root">
-	</div>
-	<div class="loggedoff">
-		<h3>Please login to get started</h3>
-		<fb:login-button show-faces="true" width="200" max-rows="1"></fb:login-button>
-
-	</div>
-	<div class="loggedin">
+<div id="fb-root"></div>
 	<div class="container" id="app">
+		<div id="header">
+			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+				<a class="navbar-brand navbar-center brand" href="/facebook">Complete the Sentence</a>
+				<button type="button" class="btn btn-default btn-lg navbar-right">
+				<span class="glyphicon glyphicon-th"></span>
+				</button>
+			</nav>
+		</div>
+		<div class="row" id="top">
+			<div class="col-md-6" id="headerUrl">
+				
+			</div>
+			<div class="col-md-6">
+				<section id="userName" class="loggedin">
+					<button type="button" class="btn btn-success btn-lg" id="btn-success">New Game</button>
+				</section>
+			</div>
 
-	</div>
+		</div>
+
+		<div class="row" id="middle">
+			
+			<div id="main" class="col-md-10 col-md-offset-1">
+				<div class="loggedin"></div>
+				<div id="game" class="loggedoff">
+					<div id="fblogin" class="jumbotron">
+						<h1>Best Game Eva!</h1>
+						<p lead> Welcome to the Sentence Game.  This game is currently only available through Facebook.  Enjoy!
+						<h3>To begin Login: </h3>
+						<fb:login-button show-faces="true" width="200" max-rows="1" id="login"></fb:login-button>
+					</div>
+				</div>
+			</div>
+		
+		</div>
+	
+
 	</div>
 
 </body>
